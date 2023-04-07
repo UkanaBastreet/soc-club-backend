@@ -13,7 +13,7 @@ export interface fbt {
 export class AppService {
   feedbacks: fbt[] = [];
   getHello(): string {
-    return 'Hello World!';
+    return 'add your feedback by [POST] request ';
   }
   feedbackTo(fb: fbt) {
     this.feedbacks.push({
