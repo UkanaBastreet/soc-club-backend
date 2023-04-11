@@ -19,15 +19,15 @@ export class AppController {
   }
   @Patch()
   getAllFeedbacks(): fbt[] {
-    return this.appService.returnAllFeedback();
+    return this.appService.getAll();
   }
   @Post()
   addFeedback(@Body() fb: fbt): fbt[] {
-    return this.appService.feedbackTo(fb);
+    return this.appService.create(fb);
   }
   @Delete(':id')
   deleteFeedback(@Param('id') id: string) {
     console.log(id);
-    return this.appService.removeOne(+id);
+    return this.appService.remove(+id);
   }
 }

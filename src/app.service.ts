@@ -15,7 +15,7 @@ export class AppService {
   getHello(): string {
     return 'add your feedback by [POST] request ';
   }
-  feedbackTo(fb: fbt) {
+  create(fb: fbt) {
     this.feedbacks.push({
       ...fb,
       id: this.feedbacks.length,
@@ -24,10 +24,10 @@ export class AppService {
     });
     return this.feedbacks;
   }
-  returnAllFeedback() {
+  getAll() {
     return this.feedbacks;
   }
-  removeOne(id: number) {
+  remove(id: number) {
     console.log('id: ', id);
     this.feedbacks = this.feedbacks.filter((fb) => fb.id !== id);
     return this.feedbacks;
